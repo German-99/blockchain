@@ -16,5 +16,8 @@
   },
   "scripts": {
     "start": "babel-node index.js"
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1"
   }
 }
