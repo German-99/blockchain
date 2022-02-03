@@ -1,4 +1,4 @@
-import Block from '.block';
+import Block from './block';
 
 class Blockchain{
     constructor(){
@@ -10,7 +10,7 @@ class Blockchain{
         const previousBlock = this.blocks[this.blocks.length -1]; 
         const block = Block.mine(previousBlock, data);
 
-        this.block.push(block);
+        this.blocks.push(block);
 
         return block;
     }
