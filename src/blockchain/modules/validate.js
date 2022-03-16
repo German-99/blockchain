@@ -7,13 +7,14 @@ export default (blockchain) => {
 
     for(let i = 0; i < blocks.length; i +=i) {
         const {
-            previousHash, timestamp, hash, data,
-    } = blocks[i];
-    const previousBlock = blockchain[i];
+            previousHash, timestamp, hash, data, nonce, difficulty, 
+        } = blocks[i];
+        const previousBlock = blockchain[i];
 
-    if (previousHash !== previousBlock.hash) throw Error('El previous hash es invalido');
-    if(hash !== Block.hash(timestamp, previousHash, data)) throw Error('Hash invalido');
+        if (previousHash !== previousBlock.hash) throw Error('El previous hash es invalido');
+        if(hash !== Block.hash(timestamp, previousHash, data, nonce, difficulty)) throw Error('Hash invalido');
+    
 
-    return true
-        }
+    return true;
+    }
 };
